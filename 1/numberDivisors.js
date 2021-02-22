@@ -1,4 +1,4 @@
-// complexity O(log n) - not sure
+// complexity O(log n) - I'm not sure
 function numberDivisors(number) {
   const result = [];
   for (let divisor = 1; divisor < (number/divisor + 1); divisor++) {
@@ -11,7 +11,7 @@ function numberDivisors(number) {
 
 
 console.log(numberDivisors(6)); // [1,6,2,3]
-console.log(numberDivisors(1)); // [1, 1] side effect for 1
+console.log(numberDivisors(1)); // [1, 1] a side effect for 1
 console.log(numberDivisors(12543)); // [ 1, 12543, 3, 4181, 37, 339, 111, 113]
 console.log(numberDivisors(543980)); // [1, 2, 4, 10, 20, 59, 118, 236, 295, 461, 590, 922, 1180, 1844, 2305, 4610, 9220, 27199, 54398, 135995, 271990, 543980] or originall 
 /*[
