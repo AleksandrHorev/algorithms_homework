@@ -1,4 +1,4 @@
-// complexity O(log n) - I'm not sure
+// complexity is O(log n) - I'm not sure
 function numberDivisors(number) {
   const result = [];
   for (let divisor = 1; divisor < (number/divisor + 1); divisor++) {
