@@ -1,0 +1,6 @@
+{
+  "name": "algorithms_homework",
+  "scripts": {
+    "run": "node 1/numberDivisors.js"
+  }
+}
