@@ -5,28 +5,17 @@ fileRead = open("/Users/aleksandr/Documents/Projects/algorithms_homework/3/INPUT
 count = int(fileRead.readline())
 coordinatesString = fileRead.readline()
 coordinates = [int(i) for i in coordinatesString.split()]
-result = 0
-skip = False
+values = []
+values[0] = abs(coordinates[1] - coordinates[0]
+values[1] = min(abs(coordinates[1] - coordinates[0], abs(coordinates[i + 2] - coordinates[i]) * 3)
 
-for i in range(count-1):
-  if (skip):
-    skip = False
-    continue
-  jump = abs(coordinates[i + 1] - coordinates[i])
-  if (i + 2 < count):
-    superJump = abs(coordinates[i + 2] - coordinates[i]) * 3
-  else:
-    superJump = jump + 1
+for i in range(2,count):
+  jump = abs(values[i-1] - coordinates[i])
+  superJump = abs(values[i-2] - coordinates[i] * 3)
+  values.append(min(jump, superJump))
 
-  if (superJump <= jump):
-    result += superJump
- #   print(superJump)
-    skip = True
-  else:
- #   print(jump)
-    result += jump
 
 fileWrite = open("/Users/aleksandr/Documents/Projects/algorithms_homework/3/OUTPUT.TXT", "w")
 # fileWrite = open("OUTPUT.TXT", "w")
-fileWrite.write(str(result))
+fileWrite.write(str(values(n-1)))
 fileWrite.close()
