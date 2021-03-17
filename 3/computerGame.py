@@ -6,8 +6,8 @@ count = int(fileRead.readline())
 coordinatesString = fileRead.readline()
 coordinates = [int(i) for i in coordinatesString.split()]
 values = []
-values[0] = abs(coordinates[1] - coordinates[0]
-values[1] = min(abs(coordinates[1] - coordinates[0], abs(coordinates[i + 2] - coordinates[i]) * 3)
+values[0] = abs(coordinates[1] - coordinates[0])
+values[1] = min(abs(coordinates[1] - coordinates[0]), abs(coordinates[2] - coordinates[0] * 3))
 
 for i in range(2,count):
   jump = abs(values[i-1] - coordinates[i])
