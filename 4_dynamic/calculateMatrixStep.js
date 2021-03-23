@@ -23,4 +23,4 @@ function countMatrixSteps(rows, columns) {
 }
 
 console.log(countMatrixSteps(3,5)); // 41
-console.log(countMatrixSteps(1,1)); // 41
+console.log(countMatrixSteps(1,1)); // 1
