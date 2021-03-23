@@ -27,4 +27,4 @@ function calculateMatrixStepJump(rows, columns) {
 
 console.log(calculateMatrixStepJump(3,5)); // 71
 console.log(calculateMatrixStepJump(3,6)); // 149
-console.log(calculateMatrixStepJump(1,1)); // 41
+console.log(calculateMatrixStepJump(1,1)); // 1
