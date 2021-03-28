@@ -1,3 +1,4 @@
+// https://acmp.ru/index.asp?main=task&id_task=328
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -7,11 +8,6 @@
 
 using namespace std;
 
-int mod(int num) {
-    if (num < 0) return -num;
-    return num;
-} 
-
 int main() {
     ifstream fin("input.txt");
     ofstream fout("output.txt");
@@ -19,25 +15,20 @@ int main() {
     int n;
     fin >> n;
 //////////////////
-    vector<int> h(n);
+    long long result = 0;
 
-    // for (int i = 0; i < n; i++) {
-    //     fin >> h[i];
+    // for (int i = 0; i <= n; i++) {
+    //   for (int j = i; j <= n; j++) {
+    //       result += (i + j);
+    //   }
     // }
+    result = n * (((n + 1) + 1)*(n + 1)/2);
 
-    int result = 0;
-
-    for (int i = 0; i <= n; i++) {
-      for (int j = i; j <= n; j++) {
-          result += (i + j);
-      }
-    }
 ////////////////////
-    // fout << min_energy[n - 1];
     fout << result;
 
     fin.close();
     fout.close();
 
-    return 0;
+     return 0;
 }
