@@ -12,7 +12,7 @@ int main() {
     ifstream fin("input.txt");
     ofstream fout("output.txt");
 
-    int n;
+    long long  n;
     fin >> n;
 //////////////////
     long long result = 0;
