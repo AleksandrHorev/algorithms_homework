@@ -1,8 +1,6 @@
 # https://leetcode.com/problems/heaters/
 # 475. Heaters
 
-from typing import List
-
 class Solution:
     def findRadius(self, houses, heaters):
       heaters = sorted(heaters) + [float('inf')]
