@@ -13,6 +13,7 @@ class Stack:
       if (self.first == None):
           self.first = element
           self.last = self.first
+          return
 
       self.last.next = element
       self.last = element

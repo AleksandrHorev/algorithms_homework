@@ -6,6 +6,13 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# Only for testing purpose
+    def addLeft(self, node):
+        self.left = node
+
+    def addRight(self, node):
+        self.right = node
+
 class Solution:
     def searchBST(self, root: TreeNode, val: int) -> TreeNode:
         def search(node):
@@ -19,3 +26,5 @@ class Solution:
                 if (rightSearch): return rightSearch
             
         return search(root)
+
+        
