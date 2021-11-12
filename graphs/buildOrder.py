@@ -15,6 +15,7 @@ class Node:
         self.value = value
         self.children = []
         self.parent = None
+        self.visited = False
 
     def addChild(self, node):
         self.children.append(node)
@@ -54,9 +55,9 @@ class BuildOrder:
             for child in node.children:
               if (roots.get(child)): return 'Can not construct an order. Theres is a cicl.'
 
-              if (nodes.get(child.value)):  # we don't want duplicate 
+              if (not child.visited):  # we don't want duplicate 
                   queue.put(child)
-                  nodes.pop(child.value)
+                  child.visited = True
               
 
       return result
