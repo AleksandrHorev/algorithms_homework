@@ -1,0 +1,43 @@
+# 4.10 Cracking the coding int
+# Check Subtree: Tl and T2 are two very large binary trees, with Tl much bigger than T2. Create an
+# algorithm to determine if T2 is a subtree of Tl.
+# A tree T2 is a subtree of Tl if there exists a node n in Tl such that the subtree of n is identical to T2.
+#  That is, if you cut off the tree at node n, the two trees would be identical.
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class Tree:
+    def isSubtreeContainsAnother(self, firstNode:Node, secondNode:Node):
+      if (not secondNode): return True
+      if (not firstNode): return False
+      if (firstNode.value == secondNode.value): 
+        return self.matchTree(firstNode, secondNode)
+      return self.matchTree(firstNode.left, secondNode.left) or self.matchTree(firstNode.right, secondNode.right)
+
+    def matchTree(self, firstNode:Node, secondNode:Node):
+        if (not firstNode and not secondNode): return True
+        if (firstNode and not secondNode): return False
+        if (firstNode.value != secondNode.value): return False
+        return self.matchTree(firstNode.left, secondNode.left) and self.matchTree(firstNode.right, secondNode.right)
+
+testNode = Node(10)
+testNode2 = Node(11)
+second = testNode
+second.left = testNode2
+
+firstNode = Node(0)
+firstNode.left = Node(1)
+firstNode.right = Node(2)
+# firstNode.left.right = testNode
+firstNode.left.right = Node(4)
+firstNode.left.right.right = testNode2
+firstNode.right.left = testNode
+# firstNode.right.left.left = testNode2 # True
+firstNode.right.left.left = Node(12) # False
+
+print(Tree().isSubtreeContainsAnother(firstNode, second))
+
